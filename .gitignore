@@ -1,0 +1,13 @@
+.env
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+__pycache__/
+.ipynb_checkpoints
+.vscode/
+tmp*/
+inference_results/
+evaluation_results/
+dataset/
