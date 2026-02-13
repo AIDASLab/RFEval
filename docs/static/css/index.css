@@ -158,6 +158,6 @@ body {
 
 /* Paper title: reduce wrapping */
 .paper-title {
-  font-size: 2.6rem;      /* 필요하면 2.4~3.0 사이로 조절 */
+  font-size: 2.4rem;      /* 필요하면 2.4~3.0 사이로 조절 */
   line-height: 1.15;
 }
