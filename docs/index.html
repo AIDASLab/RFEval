@@ -144,11 +144,11 @@
     <div class="hero-body">
       <!-- main image -->
       <figure class="image">
-        <img src="./static/images/teaser.jpg"
+        <img src="./docs//static/images/teaser.jpg"
              alt="subtitle of the main image">
       </figure>
       <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
-        RFEval audits reasoning faithfulness via stance consistency and causal influence under controlled, output-level counterfactual interventions.
+        Large Reasoning Models (LRMs) can produce plausible-sounding rationales that don’t reflect their true decision process. We propose RFEval, a benchmark to measure reasoning faithfulness via counterfactual interventions, finding that 49.7% of model outputs are unfaithful, mostly due to stance inconsistency.
       </h2>
     </div>
   </div>
@@ -164,28 +164,11 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="column has-text-justified" style="padding: 0;">
             <p>
-              Large Reasoning Models (LRMs) exhibit strong performance, yet often produce rationales that sound plausible but fail to reflect their true decision process, undermining reliability and trust. We introduce a formal framework for \emph{reasoning faithfulness}, defined by two testable conditions: \emph{stance consistency} (a coherent stance linking reasoning to answer) and \emph{causal influence} (the stated reasoning causally drives the answer under output-level interventions), explicitly decoupled from accuracy. To operationalize this, we present \textbf{RFEval}, a benchmark of 7,186 instances across seven tasks that probes faithfulness via controlled, output-level counterfactual interventions. Evaluating twelve open-source LRMs, we find unfaithfulness in 49.7\% of outputs, predominantly from stance inconsistency. Failures are concentrated in brittle, convergent domains such as math and code, and correlate more with post-training regimes than with scale: within-family ablations indicate that adding current RL-style objectives on top of supervised fine-tuning can \emph{reduce} reasoning faithfulness, even when accuracy is maintained. Crucially, \emph{accuracy is neither a sufficient nor a reliable proxy for faithfulness}: once controlling for model and task, the accuracy–faithfulness link is weak and statistically insignificant. Our work establishes a rigorous methodology for auditing LRM reliability and shows that trustworthy AI requires optimizing not only for correct outcomes but also for the structural integrity of the reasoning process.
+              LRMs can be highly accurate yet still give plausible-sounding rationales that don’t match their true decision process. We formalize reasoning faithfulness with two testable criteria—stance consistency (reasoning and answer align) and causal influence (the stated reasoning actually drives the answer under output-level interventions)—separate from accuracy. We introduce RFEval (7,186 instances, 7 tasks) to measure this via controlled counterfactual interventions, and find 49.7% of outputs are unfaithful, mostly due to stance inconsistency. Unfaithfulness is concentrated in brittle domains like math/code and relates more to post-training (e.g., RL-style objectives) than model scale: adding RL on top of SFT can reduce faithfulness even when accuracy holds. Overall, accuracy is a weak, unreliable proxy for faithfulness, motivating auditing and optimization for both correctness and reasoning integrity.
             </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Demo -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Demo</h2>
-        <p>
-          Interactive demo will be released soon.
-        </p>
-        <!-- HF Space Link -->
-        <gradio-app src="https://ever2after-test.hf.space"></gradio-app>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -262,7 +245,7 @@
                 <td>58.11</td>
                 <td>43.97</td>
                 <td>48.64</td>
-                <td>*3.09</td>
+                <td>3.09</td>
                 <td><strong>41.95</strong></td>
               </tr>
               <tr>
