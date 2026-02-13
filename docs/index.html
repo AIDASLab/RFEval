@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta: paper description and keywords -->
+  <meta name="description"
+        content="This is a description of the research paper.">
+  <meta name="keywords" content="Keyword1, Keyword2, Keyword3">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Paper title -->
+  <title>Title</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- Gradio -->
+  <script
+	  type="module"
+	  src="https://gradio.s3-us-west-2.amazonaws.com/5.42.0/gradio.js"
+  ></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://aidas.snu.ac.kr">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        <div style="padding-left:5px;">AIDAS Lab</div>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- Paper Title -->
+          <h1 class="title is-1 publication-title paper-title">
+            RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models
+          </h1>
+
+          <!-- Conference Name and Year -->
+          <h1 class="title is-4 publication-title" style="color: #FF0066;">
+            ICLR 2026
+          </h1>
+
+          <!-- Authors and Affiliations -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://...">Yunseok Han</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://...">Yejoon Lee</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://...">Jaeyoung Do</a><sup>1,2</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>IPAI</span>
+            <span class="author-block"><sup>2</sup>ECE</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper Link. -->
+              <span class="link-block">
+                <a href="https://iclr.cc/virtual/2026/poster/10011763"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Arxiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/... (arxiv 논문 링크)"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/AIDASLab/RFEval"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/snu-aidas/RFEval"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- main image -->
+      <figure class="image">
+        <img src="./static/images/teaser.jpg"
+             alt="subtitle of the main image">
+      </figure>
+      <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
+        RFEval audits reasoning faithfulness via stance consistency and causal influence under controlled, output-level counterfactual interventions.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="hero is-light ">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="column has-text-justified" style="padding: 0;">
+            <p>
+              Large Reasoning Models (LRMs) exhibit strong performance, yet often produce rationales that sound plausible but fail to reflect their true decision process, undermining reliability and trust. We introduce a formal framework for \emph{reasoning faithfulness}, defined by two testable conditions: \emph{stance consistency} (a coherent stance linking reasoning to answer) and \emph{causal influence} (the stated reasoning causally drives the answer under output-level interventions), explicitly decoupled from accuracy. To operationalize this, we present \textbf{RFEval}, a benchmark of 7,186 instances across seven tasks that probes faithfulness via controlled, output-level counterfactual interventions. Evaluating twelve open-source LRMs, we find unfaithfulness in 49.7\% of outputs, predominantly from stance inconsistency. Failures are concentrated in brittle, convergent domains such as math and code, and correlate more with post-training regimes than with scale: within-family ablations indicate that adding current RL-style objectives on top of supervised fine-tuning can \emph{reduce} reasoning faithfulness, even when accuracy is maintained. Crucially, \emph{accuracy is neither a sufficient nor a reliable proxy for faithfulness}: once controlling for model and task, the accuracy–faithfulness link is weak and statistically insignificant. Our work establishes a rigorous methodology for auditing LRM reliability and shows that trustworthy AI requires optimizing not only for correct outcomes but also for the structural integrity of the reasoning process.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Demo -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Demo</h2>
+        <p>
+          Interactive demo will be released soon.
+        </p>
+        <!-- HF Space Link -->
+        <gradio-app src="https://ever2after-test.hf.space"></gradio-app>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            RFEval formalizes <em>reasoning faithfulness</em> as a property distinct from answer accuracy, and operationalizes it with two testable conditions:
+          </p>
+          <ul>
+            <li><strong>Stance consistency</strong>: the stated rationale maintains a coherent stance that supports the final answer.</li>
+            <li><strong>Causal influence</strong>: under <em>output-level counterfactual interventions</em> that edit the rationale, the answer changes in the causally expected way.</li>
+          </ul>
+          <p>
+            To measure these conditions at scale, we curate a 7,186-instance benchmark across seven tasks and evaluate 12 open-source LRMs using controlled counterfactual edits and automated + human validation.
+          </p>
+        </div>
+        <!-- Diagram or Illustration of Method -->
+        <figure class="image">
+          <img src="./static/images/method.pdf" style="max-width:70%;margin-right:auto;margin: 50px auto 0 auto;"
+               alt="RFEval benchmark evaluation pipeline.">
+        </figure>
+        <h3 class="has-text-centered" style="margin-top: 20px;">RFEval benchmark evaluation pipeline.</h3>
+      </div>
+</section>
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Main Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Across 12 open-source LRMs, we observe substantial unfaithfulness: <strong>49.7%</strong> of model outputs violate at least one faithfulness condition, with failures dominated by stance inconsistency.
+            We also find that post-training choices (e.g., RL-style objectives) can reduce faithfulness even when accuracy is maintained, and that the accuracy–faithfulness association becomes weak once controlling for model and task.
+          </p>
+          <!-- RFEval main results (RF only; c(M) removed) -->
+          <table class="table is-striped is-hoverable is-fullwidth has-text-centered">
+            <thead>
+              <tr>
+                <th rowspan="2">Model</th>
+                <th colspan="1">CG</th>
+                <th colspan="1">MR</th>
+                <th colspan="1">LR</th>
+                <th colspan="1">TR</th>
+                <th colspan="1">CU</th>
+                <th colspan="1">LD</th>
+                <th colspan="1">PR</th>
+                <th colspan="1">Overall</th>
+              </tr>
+              <tr>
+                <th>RF (%)</th>
+                <th>RF (%)</th>
+                <th>RF (%)</th>
+                <th>RF (%)</th>
+                <th>RF (%)</th>
+                <th>RF (%)</th>
+                <th>RF (%)</th>
+                <th>RF (%)</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th>Qwen3-8B</th>
+                <td>21.15</td>
+                <td>37.97</td>
+                <td>72.74</td>
+                <td>58.11</td>
+                <td>43.97</td>
+                <td>48.64</td>
+                <td>*3.09</td>
+                <td><strong>41.95</strong></td>
+              </tr>
+              <tr>
+                <th>Qwen3-32B</th>
+                <td>24.66</td>
+                <td>47.87</td>
+                <td>88.62</td>
+                <td>89.84</td>
+                <td>77.66</td>
+                <td>89.90</td>
+                <td>91.49</td>
+                <td><strong>73.29</strong></td>
+              </tr>
+              <tr>
+                <th>R1-Qwen-7B</th>
+                <td>38.25</td>
+                <td>29.54</td>
+                <td>82.13</td>
+                <td>44.46</td>
+                <td>76.31</td>
+                <td>70.63</td>
+                <td>81.49</td>
+                <td><strong>61.37</strong></td>
+              </tr>
+              <tr>
+                <th>R1-Qwen-32B</th>
+                <td>29.02</td>
+                <td>32.57</td>
+                <td>70.79</td>
+                <td>82.47</td>
+                <td>63.16</td>
+                <td>91.04</td>
+                <td>75.13</td>
+                <td><strong>64.24</strong></td>
+              </tr>
+              <tr>
+                <th>R1-Llama-8B</th>
+                <td>26.48</td>
+                <td>33.03</td>
+                <td>55.78</td>
+                <td>57.68</td>
+                <td>64.63</td>
+                <td>78.97</td>
+                <td>94.53</td>
+                <td><strong>58.46</strong></td>
+              </tr>
+              <tr>
+                <th>R1-Llama-70B</th>
+                <td>27.89</td>
+                <td>31.28</td>
+                <td>74.03</td>
+                <td>73.78</td>
+                <td>51.40</td>
+                <td>80.53</td>
+                <td>51.84</td>
+                <td><strong>56.47</strong></td>
+              </tr>
+              <tr>
+                <th>gpt-oss-20b</th>
+                <td>26.44</td>
+                <td>24.90</td>
+                <td>13.55</td>
+                <td>22.62</td>
+                <td>33.93</td>
+                <td>59.14</td>
+                <td>47.41</td>
+                <td><strong>32.11</strong></td>
+              </tr>
+              <tr>
+                <th>gpt-oss-120b</th>
+                <td>22.01</td>
+                <td>16.07</td>
+                <td>8.62</td>
+                <td>34.21</td>
+                <td>13.67</td>
+                <td>39.58</td>
+                <td>70.71</td>
+                <td><strong>27.50</strong></td>
+              </tr>
+              <tr>
+                <th>MiMo-RL</th>
+                <td>21.20</td>
+                <td>7.12</td>
+                <td>62.80</td>
+                <td>64.98</td>
+                <td>41.56</td>
+                <td>85.75</td>
+                <td>52.34</td>
+                <td><strong>46.32</strong></td>
+              </tr>
+              <tr>
+                <th>MiMo-RL-Zero</th>
+                <td>20.83</td>
+                <td>33.50</td>
+                <td>70.59</td>
+                <td>61.32</td>
+                <td>69.58</td>
+                <td>77.87</td>
+                <td>66.83</td>
+                <td><strong>58.74</strong></td>
+              </tr>
+              <tr>
+                <th>Magistral-Small</th>
+                <td>12.32</td>
+                <td>6.98</td>
+                <td>26.63</td>
+                <td>42.70</td>
+                <td>14.51</td>
+                <td>45.35</td>
+                <td>46.72</td>
+                <td><strong>26.06</strong></td>
+              </tr>
+              <tr>
+                <th>LN-Super_v1</th>
+                <td>26.48</td>
+                <td>44.90</td>
+                <td>77.13</td>
+                <td>69.38</td>
+                <td>81.70</td>
+                <td>80.38</td>
+                <td>98.47</td>
+                <td><strong>68.52</strong></td>
+              </tr>
+
+              <tr class="has-background-light">
+                <th><strong>Overall</strong></th>
+                <td><strong>24.18</strong></td>
+                <td><strong>28.06</strong></td>
+                <td><strong>58.28</strong></td>
+                <td><strong>57.92</strong></td>
+                <td><strong>51.66</strong></td>
+                <td><strong>70.17</strong></td>
+                <td><strong>58.03</strong></td>
+                <td><strong>50.27</strong></td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="9" class="has-text-grey is-size-6">
+                  CG: Code Generation, MR: Mathematical Reasoning, LR: Logical Reasoning, TR: Table Reasoning, CU: Context Understanding, LD: Legal Decision, PR: Paper Review.
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{han2025rfeval,
+      title     = {RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models},
+      author    = {Han, Yunseok and Lee, Yejoon and Do, Jaeyoung},
+      booktitle = {The Fourteenth International Conference on Learning Representations (ICLR)},
+      year      = {2026},
+    }</code></pre>
+  </div>
+</section>
+
+<!-- Footer (Don't change) -->
+<footer class="footer" style="padding-bottom: 40px;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <a href="https://en.snu.ac.kr">
+            <img src="./static/images/snu_logo.png" alt="Logo" style="max-height: 48px; margin: 6px 10px;">
+          </a>
+          <a href="https://aidas.snu.ac.kr">
+            <img src="./static/images/aidaslab_logo.png" alt="Logo" style="max-height: 36px; margin: 10px 30px;">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
