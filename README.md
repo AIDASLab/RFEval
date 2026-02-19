@@ -92,10 +92,11 @@ Output:
 If you find this work useful, please consider citing:
 
 ```bibtex
-@article{han2025rfeval,
-  title     = {RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models},
-  author    = {Han, Yunseok and Lee, Yejoon and Do, Jaeyoung},
-  booktitle = {The Fourteenth International Conference on Learning Representations (ICLR)},
-  year      = {2026},
+@inproceedings{han2026rfeval,
+  title={RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models},
+  author={Yunseok Han and Yejoon Lee and Jaeyoung Do},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026},
+  url={https://openreview.net/forum?id=2Gc8aj0afg}
 }
 ```
