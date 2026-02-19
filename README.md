@@ -2,7 +2,7 @@
 
 This is the official repository for RFEval, the evaluation framework of Reasoning Faithfulness for Large Reasoning Models.
 
-Project Page: [TBD](placeholder)
+Project Page: [aidaslab.github.io/RFEval](https://aidaslab.github.io/RFEval/)
 
 Paper (arXiv): [TBD](placeholder)
 
