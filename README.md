@@ -1,12 +1,10 @@
 # [ICLR 2026] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models
 
+[![arXiv](https://img.shields.io/badge/arXiv-2602.17053-red.svg)](https://arxiv.org/abs/2602.17053)
+[![deploy](https://img.shields.io/badge/Huggingface%20-RFEval%20-blue)](https://huggingface.co/datasets/snu-aidas/RFEval)
+[![deploy](https://img.shields.io/badge/Page-yellow.svg)](https://aidaslab.github.io/RFEval/)
+
 This is the official repository for RFEval, the evaluation framework of Reasoning Faithfulness for Large Reasoning Models.
-
-Project Page: [aidaslab.github.io/RFEval](https://aidaslab.github.io/RFEval/)
-
-Paper (arXiv): [TBD](placeholder)
-
-Dataset: [huggingface.co/datasets/snu-aidas/RFEval](https://huggingface.co/datasets/snu-aidas/RFEval)
 
 ## 🚀 Requirements & Installation
 
